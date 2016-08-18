@@ -1,1 +1,1 @@
-Some pizza fun. run "npm install" and then "npm run dev" to run server
+Some pizza fun. I've found some interesting boilerplate with webpack and ES6, played with it around for a bit. So, run "npm install" (you may needa do it with sudo) and then "npm run dev" to run server. Navigate to localhost:8080 in your browser to check app.
