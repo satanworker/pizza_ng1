@@ -1,5 +1,11 @@
 .chip {
+  opacity: .5;
   &.chosen {
-    opacity: .5;
+    opacity: 1;
   }
+}
+
+create-pizza {
+  margin-top: 40px;
+  display: block;
 }
