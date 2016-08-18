@@ -1,0 +1,41 @@
+<div class="row">
+    <form class="col s6">
+        <div class="row">
+            <div class="input-field col s6">
+                <input placeholder="Pizza Name" id="first_name" type="text" ng-model="$ctrl.pizza.name"class="validate">
+                <label for="first_name">Pizza Name</label>
+            </div>
+            <div class="input-field col s6">
+                <input id="last_name" placeholder="Pizza Size"  type="number" ng-model="$ctrl.pizza.size" class="validate">
+                <label for="last_name">Pizza Size</label>
+            </div>
+        </div>
+        <div class="row">
+            <div class="chip"
+                 ng-repeat="(key, topping) in $ctrl.toppings"
+                 ng-class="{'chosen': topping.chosen}"
+                 ng-click="$ctrl.choseTopping(topping, key)">
+                {{topping.name}}
+            </div>
+        </div>
+        <a class="waves-effect waves-light btn" ng-click="$ctrl.submit($event)">ADD PIZZA</a>
+    </form>
+</div>
+
+<div class="pizzaList">
+    <div class="row">
+        <div class="col s12 m6" ng-repeat="(key,pizza) in $ctrl.pizzas">
+            <div class="card blue-grey darken-1">
+                <div class="card-content white-text">
+                    <span class="card-title">{{pizza.name}}</span>
+                    <p><b>SIZE:</b> {{pizza.size}}</p>
+                    <p><b>TOPPING:</b> {{pizza.topping}}</p>
+                </div>
+                <div class="card-action">
+                    <a ng-click="$ctrl.removePizza($event, key)">DELETE PIZZA</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
