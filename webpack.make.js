@@ -97,7 +97,7 @@ module.exports = function makeWebpackConfig (options) {
       query: {
         presets: ['es2015']
       }
-    }, {
+    }, { 
       // ASSET LOADER
       // Reference: https://github.com/webpack/file-loader
       // Copy png, jpg, jpeg, gif, svg, woff, woff2, ttf, eot files to output
@@ -117,6 +117,7 @@ module.exports = function makeWebpackConfig (options) {
       loaders: ["style", "css", "sass"]
     }]
   };
+
 
   // ISPARTA LOADER
   // Reference: https://github.com/ColCh/isparta-instrumenter-loader
@@ -181,6 +182,9 @@ module.exports = function makeWebpackConfig (options) {
     // Disabled when in test mode or not in build mode
     new ExtractTextPlugin('[name].[hash].css', {
       disable: !BUILD || TEST
+    }),
+    new webpack.ProvidePlugin({
+      'window.jQuery': 'jquery'
     })
   ];
 

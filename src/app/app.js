@@ -1,9 +1,8 @@
 import angular from 'angular'
-
+require('./styles/materialize/materialize.css');
 import home from './pages/home/home'
 import styles from './styles/main.scss'
-// import * as $ from '../../public/assets/jquery/jquery'
-// import * as materialize from '../../public/assets/materialize/js/materialize'
+
 
 angular
   .module('app', [
@@ -12,5 +11,5 @@ angular
   ])
   .config(($urlRouterProvider) => {
     $urlRouterProvider.otherwise('/home')
-  })
+  });
 
